@@ -6,21 +6,21 @@ layout: workshop      # DON'T CHANGE THIS.
 venue: "Midsummer QCD school hands-on session"        # brief name of the institution that hosts the workshop without address (e.g., "Euphoric State University")
 address: "Saariselkä"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria"), videoconferencing URL, or 'online'
 country: "Finland"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes) for the institution that hosts the workshop
-language: "Englis"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for the workshop
-latitude: "68"        # decimal latitude of workshop venue (use https://www.latlong.net/)
-longitude: "27"       # decimal longitude of the workshop venue (use https://www.latlong.net)
+language: "English"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for the workshop
+latitude:        # decimal latitude of workshop venue (use https://www.latlong.net/)
+longitude:       # decimal longitude of the workshop venue (use https://www.latlong.net)
 humandate: "Jun 24 - Jul 6, 2024"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
 humantime: "9:00 am - 6:00 pm CEST"    # human-readable times for the workshop e.g., "9:00 am - 4:30 pm CEST (7:00 am - 2:30 pm UTC)"
 startdate: 2024-06-25      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
 enddate: 2024-07-06        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
-instructor: ["Kati Lassila-Perini", "Thea Aarrestad", "Ilkka Helenius", "Alan Price", "Santeri Laurila", "Hennning Kirschenmann"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
-helper: ["helper one", "helper two"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
+instructor: ["Kati Lassila-Perini", "Thea Aarrestad", "Ilkka Helenius", "Alan Price"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
+helper: ["Santeri Laurila", "Henning Kirschenmann"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
 email: ["kati.lassila-perini@cern.ch"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
 collaborative_notes:  # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document (e.g., https://pad.carpentries.org/2015-01-01-euphoria)
 eventbrite:           # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
 ---
 
-{% comment %} See instructions in the comments below for how to edit specific sections of this workshop template. {% endcomment %}
+{% comment %}  See instructions in the comments below for how to edit specific sections of this workshop template. {% endcomment %}
 
 {% comment %}
 HEADER
@@ -28,7 +28,7 @@ HEADER
 Edit the values in the block above to be appropriate for your workshop.
 If the value is not 'true', 'false', 'null', or a number, please use
 double quotation marks around the value, unless specified otherwise.
-And run 'make workshop-check' *before* committing to make sure that changes are good.
+And run 'make workshop-check' *before* committing to make sure that changes are good. 
 {% endcomment %}
 
 
@@ -159,7 +159,9 @@ This block displays the date and links to Google Calendar.
 <p id="when">
   <strong>When:</strong>
   {{page.humandate}}.
+  {% comment %}
   {% include workshop_calendar.html %}
+  {% endcomment %}
 </p>
 {% endif %}
 
@@ -175,9 +177,9 @@ Modify the block below if there are any special requirements.
     Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
   {% else %}
     Participants must have access to a computer with a
-    Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
+    Unix shell on Mac, Linux, or Windows WSL operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
   {% endif %}
-  They should have a few specific software packages installed (listed <a href="#setup">below</a>).
+  Specific software packages will be installed during the first hands-on sessions.
 </p>
 
 {% comment %}
@@ -225,14 +227,16 @@ Display the contact email address set in the configuration file.
   {% else %}
   to-be-announced
   {% endif %}
-  for more information.
+  for more information. 
 </p>
 
+{% comment %}
 <p id="roles">
   <strong>Roles:</strong>
   To learn more about the roles at the workshop (who will be doing what),
   refer to <a href="https://carpentries.org/workshop_faq/#what-are-the-roles-of-everyone-participating-in-a-workshop">our Workshop FAQ</a>.
 </p>
+{% endcomment %}
 
 {% comment %}
 WHO CAN ATTEND?
@@ -259,11 +263,10 @@ Edit the text to match who can attend the workshop. For instance:
 
 {% comment%}
 CODE OF CONDUCT
-{% endcomment %}
 <h2 id="code-of-conduct">Code of Conduct</h2>
 
 <p>
-Everyone who participates in Carpentries activities is required to conform to the <a href="https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html">Code of Conduct</a>. This document also outlines how to report an incident if needed.
+Everyone who participates in Carpentries activities is required to conform to the <a href="https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html">Code of Conduct</a>. This document also outlines how to report an incident if needed. 
 </p>
 
 <p class="text-center">
@@ -272,6 +275,8 @@ Everyone who participates in Carpentries activities is required to conform to th
   </a>
 </p>
 <hr/>
+{% endcomment %}
+
 
 
 {% comment %}
@@ -299,7 +304,6 @@ We will use this <a href="{{ page.collaborative_notes }}">collaborative document
 
 {% comment %}
 SURVEYS - DO NOT EDIT SURVEY LINKS
-{% endcomment %}
 <h2 id="surveys">Surveys</h2>
 <p>Please be sure to complete these surveys before and after the workshop.</p>
 {% if site.carpentry == "incubator" %}
@@ -318,7 +322,7 @@ change the value of `carpentry` to `incubator`.
 <p><a href="{{ site.pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
 <p><a href="{{ site.post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
 {% endif %}
-
+{% endcomment %}
 <hr/>
 
 
@@ -344,7 +348,7 @@ of code below the Schedule `<h2>` header below with
 `{% include custom-schedule.html %}`.
 {% endcomment %}
 
-<h2 id="schedule">Schedule</h2>
+<h2 id="schedule">Schedule of sessions with hands-on work</h2>
 
 {% if site.carpentry == "cms" %}
 {% include swc/schedule.html %}
@@ -380,7 +384,7 @@ and end easier to find.
 This is the other place where people frequently make mistakes, so
 please preview your site before committing, and make sure to run
 'tools/check' as well.
-{% endcomment %}
+
 
 <h2 id="setup">Setup</h2>
 
@@ -402,6 +406,7 @@ please preview your site before committing, and make sure to run
   that may be useful on the
   <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
 </p>
+{% endcomment %}
 
 {% comment %}
 For online workshops, the section below provides:
@@ -419,7 +424,7 @@ to include the relevant installation instructions.
 
 {% comment %}
 These are the installation instructions for the tools used
-during the workshop.
+during the workshop. 
 {% endcomment %}
 
 {% if site.carpentry == "swc" %}
