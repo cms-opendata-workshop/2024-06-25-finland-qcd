@@ -5036,7 +5036,10 @@ a.badge:focus {
   padding-bottom: 30px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #eeeeee;
+  background-color: white;
+  background-image: url("https://opendata.cern.ch/static/assets/img/header-image.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .jumbotron h1,
 .jumbotron .h1 {
